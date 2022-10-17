@@ -1,5 +1,6 @@
 # QrCodeGenerator
-A QR code generator app to send text from desktop devices to Mobile devices easily
+A QR code generator app to send text from desktop devices to Mobile devices easily.
+You can find the .exe file at dist/QRcodegenerator.exe
 
 
 
