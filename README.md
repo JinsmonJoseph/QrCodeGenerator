@@ -4,4 +4,4 @@ You can find the .exe file at dist/QRcodegenerator.exe
 
 
 
-[![Qr-Code-Generator-Img.png](https://i.postimg.cc/13Pw29c0/Qr-Code-Generator-Img.png)](https://postimg.cc/gnSx6b7r)
+[![Qr-Code-Generator-Img.png](https://i.postimg.cc/W3bhwzVz/Qr-Code-Generator-Img.png)](https://postimg.cc/67gW99yx)
