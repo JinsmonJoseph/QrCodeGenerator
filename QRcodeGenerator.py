@@ -9,7 +9,6 @@ root = Tk()
 root.title("QrCodeGenerator")
 root.minsize(width=400,height=400)
 root.geometry("500x500")
-root.mainloop()
 
 #Create QR from text stored in Clipboard
 def createQr():
@@ -24,7 +23,14 @@ def createQr():
     img.save('QR.png')
 #Function to perform refresh
 def refresh():
-    pass
+    global img
+    createQr()
+    Canvas1.imgref = img
+    QRimg =Image.open("QR.png")
+    QRimg = QRimg.resize((300,300),Image.ANTIALIAS)
+    img = ImageTk.PhotoImage(QRimg)
+    Canvas1.itemconfig(imageContainer,image=img)
+
 #Display QR Code
 createQr()
 QRimg =Image.open("QR.png")
@@ -38,3 +44,5 @@ Canvas1.pack(expand=True,fill=BOTH)
 #Button to perform refresh
 RefreshBtn = Button(root,text="Refresh",bg='green', fg='black',font=('Helvetica',20,"bold"), command=refresh)
 RefreshBtn.place(relx=0.35,rely=0.85, relwidth=0.27,relheight=0.1)
+
+root.mainloop()
