@@ -13,7 +13,10 @@ root.geometry("500x550")
 input_data=""
 def createQr():
     global input_data
-    input_data = root.clipboard_get()
+    try:
+        input_data = root.clipboard_get()
+    except:
+        input_data="--CLIP BOARD IS EMPTY --"
     qr = qrcode.QRCode(
             version=5,
             box_size=10,
@@ -22,6 +25,7 @@ def createQr():
     qr.make(fit=True)
     img = qr.make_image(fill='black', back_color='white')
     img.save('QR.png')
+
 #Function to perform refresh
 def refresh():
     global img
@@ -44,6 +48,7 @@ Canvas1 = Canvas(root)
 imageContainer=Canvas1.create_image(250,190,image = img)  
 Canvas1.config(bg="black",width = 300, height = 300)
 Canvas1.pack(expand=True,fill=BOTH)
+
 #Label showing clipboard text
 labelFrame = Frame(root,bg="#FFFFFF")
 labelFrame.place(relx=0.05,rely=0.6,relwidth=0.9,relheight=0.20)
